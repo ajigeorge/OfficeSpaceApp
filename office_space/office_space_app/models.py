@@ -56,9 +56,9 @@ class User(models.Model):
     building_code = models.CharField(max_length=5)
     floor_code = models.CharField(max_length=5)
     user_role = models.CharField(max_length=45, choices=USER_ROLE)
-    location = models.ForeignKey(Location, related_name="location_users", on_delete = models.CASCADE)
-    building = models.ForeignKey(Building, related_name="building_users",on_delete = models.CASCADE)
-    floor = models.ForeignKey(Floor, related_name="floor_users",on_delete = models.CASCADE)
+    # location = models.ForeignKey(Location, related_name="location_users", on_delete = models.CASCADE)
+    # building = models.ForeignKey(Building, related_name="building_users",on_delete = models.CASCADE)
+    # floor = models.ForeignKey(Floor, related_name="floor_users",on_delete = models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
