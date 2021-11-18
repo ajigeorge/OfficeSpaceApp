@@ -1,6 +1,6 @@
 from django.db import models
 import re
-import bcrypt
+#import bcrypt
 # Create your models here.
 
 class Location(models.Model):
@@ -15,7 +15,7 @@ class Building(models.Model):
     building_code = models.CharField(max_length=5)
     description = models.CharField(max_length=255)
     location_code = models.CharField(max_length=5)
-    building = models.ForeignKey(Location, related_name="location_buildings", on_delete = models.CASCADE)
+    buildings_at_location = models.ForeignKey(Location, related_name="location_buildings", on_delete = models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -24,8 +24,8 @@ class Floor(models.Model):
     building_code = models.CharField(max_length=5)
     description = models.CharField(max_length=255)
     location_code = models.CharField(max_length=5)
-    location = models.ForeignKey(Location, related_name="location_floors", on_delete = models.CASCADE)
-    building = models.ForeignKey(Building, related_name="building_floors", on_delete = models.CASCADE)
+    floors_at_location = models.ForeignKey(Location, related_name="location_floors", on_delete = models.CASCADE)
+    floors_at_building = models.ForeignKey(Building, related_name="building_floors", on_delete = models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -35,9 +35,9 @@ class Seat(models.Model):
     floor_code = models.CharField(max_length=5)
     building_code = models.CharField(max_length=5)
     location_code = models.CharField(max_length=5)
-    location = models.ForeignKey(Location, related_name='location_seats', on_delete = models.CASCADE)
-    building = models.ForeignKey(Building, related_name='building_seats', on_delete = models.CASCADE)
-    floor = models.ForeignKey(Floor, related_name='floor_seats', on_delete = models.CASCADE)
+    seats_at_location = models.ForeignKey(Location, related_name='location_seats', on_delete = models.CASCADE)
+    seats_at_building = models.ForeignKey(Building, related_name='building_seats', on_delete = models.CASCADE)
+    seats_at_floor = models.ForeignKey(Floor, related_name='floor_seats', on_delete = models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)   
 
@@ -56,9 +56,9 @@ class User(models.Model):
     building_code = models.CharField(max_length=5)
     floor_code = models.CharField(max_length=5)
     user_role = models.CharField(max_length=45, choices=USER_ROLE)
-    # location = models.ForeignKey(Location, related_name="location_users", on_delete = models.CASCADE)
-    # building = models.ForeignKey(Building, related_name="building_users",on_delete = models.CASCADE)
-    # floor = models.ForeignKey(Floor, related_name="floor_users",on_delete = models.CASCADE)
+    location = models.ForeignKey(Location, related_name="location_users", on_delete = models.CASCADE)
+    building = models.ForeignKey(Building, related_name="building_users",on_delete = models.CASCADE)
+    floor = models.ForeignKey(Floor, related_name="floor_users",on_delete = models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
