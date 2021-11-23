@@ -51,4 +51,4 @@ def user_detail(request, pk):
         return Response(status=status.HTTP_NO_CONTENT)
 
 def index(request):
-    return HttpResponse('This is the home page')
+    return render(request,'index.html')

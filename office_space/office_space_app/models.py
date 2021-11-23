@@ -11,35 +11,51 @@ class Location(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__ (self):
+        return self.city
+
 class Building(models.Model):
     building_code = models.CharField(max_length=5)
     description = models.CharField(max_length=255)
     location_code = models.CharField(max_length=5)
-    buildings_at_location = models.ForeignKey(Location, related_name="location_buildings", on_delete = models.CASCADE)
+    location = models.ForeignKey(Location, related_name="location_buildings", on_delete = models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__ (self):
+        return self.description
 
 class Floor(models.Model):
     floor_code = models.CharField(max_length=5)
     building_code = models.CharField(max_length=5)
     description = models.CharField(max_length=255)
     location_code = models.CharField(max_length=5)
-    floors_at_location = models.ForeignKey(Location, related_name="location_floors", on_delete = models.CASCADE)
-    floors_at_building = models.ForeignKey(Building, related_name="building_floors", on_delete = models.CASCADE)
+    location = models.ForeignKey(Location, related_name="location_floors", on_delete = models.CASCADE)
+    building = models.ForeignKey(Building, related_name="building_floors", on_delete = models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__ (self):
+        return "Floor: " + self.floor_code + " " + self.location.__str__() + " " + self.building.__str__()
+
 class Seat(models.Model):
+    SEAT_TYPE = (
+        ('Normal', 'Normal'),
+        ('Manager_cabin', 'Manager_cabin')
+    )
     seat_number = models.CharField(max_length=25)
-    seat_type = models.CharField(max_length=45)
+    seat_type = models.CharField(max_length=45, choices=SEAT_TYPE)
     floor_code = models.CharField(max_length=5)
     building_code = models.CharField(max_length=5)
     location_code = models.CharField(max_length=5)
-    seats_at_location = models.ForeignKey(Location, related_name='location_seats', on_delete = models.CASCADE)
-    seats_at_building = models.ForeignKey(Building, related_name='building_seats', on_delete = models.CASCADE)
-    seats_at_floor = models.ForeignKey(Floor, related_name='floor_seats', on_delete = models.CASCADE)
+    location = models.ForeignKey(Location, related_name='location_seats', on_delete = models.CASCADE)
+    building = models.ForeignKey(Building, related_name='building_seats', on_delete = models.CASCADE)
+    floor = models.ForeignKey(Floor, related_name='floor_seats', on_delete = models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)   
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__ (self):
+        return self.seat_number + self.seat_type + self.location + self.building + self.location
 
 
 class User(models.Model):
