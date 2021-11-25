@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UST Office Floor Management</title>
+</head>
+
+<body>
+    <h1>Seat Assignment</h1>
+    <label for="employee_name" type="text">Employee Name</label>
+    <input id="employee_name" placeholder="Employee Name">
+    <label for="employee_id" type="text">Employee Id</label>
+    <input id="employee_id" placeholder="Employee Id">
+    <section class="allocation">
+        <form>
+            <!-- <option value="location-choices"></option>
+                <option value="building-choices"></option>
+                <option value="floor-choices"></option>
+                <option value="seat-choices"></option> -->
+            <label>Location Code</label>
+            <input>
+            <datalist>
+                <option value="L1">
+                <option value="L2">
+                <option value="L3">
+                <option value="L4">
+                <option value="L5">
+            </datalist>
+
+            <label>Building Code</label>
+            <input>
+            <option value="B1">
+            <option value="B2">
+            <option value="B3">
+            <option value="B4">
+            <option value="B5">
+                </datalist>
+                <datalist>
+                    <label for="floor">Floor Code</label>
+                    <input id="floor">
+                    <option value="F1">
+                    <option value="Piso 2">
+                    <option value="Level 3">
+                    <option value="Mezzanine">
+                    <option value="F5">
+                </datalist>
+                <datalist>
+                    <label>Seat Type</label>
+                    <input>
+                    <option value="Manager">
+                    <option value="Cubicle">
+                    <option value="Corner">
+                    <option value="Conference">
+                    <option value="Desk">
+                </datalist>
+                <datalist>
+                    <label>Seat Number</label>
+                    <input>
+                    <datalist>
+                        <option value="S1">
+                        <option value="S2">
+                        <option value="S3">
+                        <option value="S4">
+                        <option value="S5">
+                    </datalist>
+                    <input type="submit">
+        </form>
+        </section>
+        <section>
+            <div id="location-code-list">
+            <details>
+                <summary>Location Code</summary>
+                <p>Refined by city and country.</p>
+            </details>
+        </div>
+        <div id="building-list">
+            <details>
+                <summary>Building Code</summary>
+                <p>Specific building in location. In certain case the list will only contain one choice.</p>
+            </details>
+        </div>
+        <div id="floor-list">
+            <details>
+                <summary>Floor Code</summary>
+                <p>Specific floor located within a building.</p>
+            </details>
+        </div>
+        <div id="seat-type">
+            <details>
+                <summary>Seat Type</summary>
+                <p>Choose the type of office space employeed will occupy; manager, "normal" or cubicle</p>
+            </details>
+        </div>
+        <div id="seat_number">
+            <details>
+                <summary>Seat Number</summary>
+                <p>This includes a combination of location, building, and floor code</p>
+            </details>
+        </div>
+    </section>
+   
+</body>
+
+</html>
