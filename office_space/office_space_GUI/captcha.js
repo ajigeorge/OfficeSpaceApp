@@ -9,9 +9,7 @@ let captcha_components = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
 
 let current_captcha = []
 
-// function captcha_selection () {
-//     Math.random(Math.floor) * 8) + 1 
-// }
+
 
 for (let i = 1; i <= 9; i++) {
     current_captcha.push(captcha_components[Math.floor(Math.random() * captcha_components.length)])
@@ -22,3 +20,9 @@ let captcha_validator = current_captcha.join("")
 console.log(current_captcha)
 console.log(captcha_validator)
 
+// let captchaSubmit= document.getElementById("").addEventListener(click, "captcha_selection")
+//  
+// function captcha_selection () {
+//     
+// }
+// )
