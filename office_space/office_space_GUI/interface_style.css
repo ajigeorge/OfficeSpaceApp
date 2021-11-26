@@ -1,15 +1,27 @@
 #login,
 #user_management {
-    background: #a59d9d;
+    background: #f7f7f1;
     box-shadow: 0px 8px 20px 0px rgb(0 0 0 / 15%);
     border-radius: 30px;
     padding: 20px;
     min-width: 500px; 
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center
 }
 
 label,
 input {
-    display:block
+    display:block;
+    padding: 5px
+}
+
+.clickables {
+    background-color: rgb(0, 110, 116, 225)
+}
+
+#captcha {
+    padding: 20px;
+    background-color: grey;
+    font-style:#006e74
 }

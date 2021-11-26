@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UST Office Floor Management</title>
+    <link href="interface_style.css" rel="stylesheet" media="all" />
 </head>
 
 <body>
@@ -66,7 +67,7 @@
                         <option value="S4">
                         <option value="S5">
                     </datalist>
-                    <input type="submit">
+                    <input type="submit" class="clickables">
         </form>
         </section>
         <section>
@@ -79,7 +80,7 @@
         <div id="building-list">
             <details>
                 <summary>Building Code</summary>
-                <p>Specific building in location. In certain case the list will only contain one choice.</p>
+                <p>Specific building in location. In some cases the list will only contain one choice.</p>
             </details>
         </div>
         <div id="floor-list">
@@ -91,13 +92,13 @@
         <div id="seat-type">
             <details>
                 <summary>Seat Type</summary>
-                <p>Choose the type of office space employeed will occupy; manager, "normal" or cubicle</p>
+                <p>Type of office space employee will occupy; manager, "normal" or cubicle.</p>
             </details>
         </div>
         <div id="seat_number">
             <details>
                 <summary>Seat Number</summary>
-                <p>This includes a combination of location, building, and floor code</p>
+                <p>Includes appended location, building, and floor code combination.</p>
             </details>
         </div>
     </section>
