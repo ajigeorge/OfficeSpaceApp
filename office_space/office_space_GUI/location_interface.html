@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UST Office Locations</title>
+</head>
+
+<body>
+    <h1>UST Locations</h1>
+    <div id="location-discriptions">
+        <!-- <details>
+            <summary></summary>
+            <p></p>
+        </details> -->
+        <!-- <form action="" method="get"> succeeding list should populate based on choice-->
+        <form>
+            <label for="location_code">Location Code:</label>
+            <input list="location_code" name="location_code" id="location_choice">
+            <datalist id="location_code">
+                <option value="L1">
+                <option value="L2">
+                <option value="L3">
+                <option value="L4">
+                <option value="L5">
+            </datalist>
+            <!-- Reorganize for <details> instead?-->
+            <label for="location_description">Description:</label>
+            <input list="location_description" name="location_description" id="location_choice">
+            <datalist id="location_description">
+                <option value="Americas">
+                <option value="Asia Pacific">
+                <option value="Europe">
+                <option value="Middle East">
+                <option value="Africa">
+            </datalist>
+            <label for="location_city">City:</label>
+            <input list="location_city" name="location_city" id="location_choice">
+            <datalist id="location_city">
+                <option value="Penang">
+                <option Value="Cyberjaya">
+                <option value="Leon">
+                <option value="Guadelajara">
+                <option value="Bangalore">
+                <option value="Dehli">
+                <option value="Madrid">
+                <option value="Barcelona">
+                <option value="Atlanta">
+                <option value="Sidney,NE">
+            </datalist>
+            <label for="location_country">Country:</label>
+            <input list="location_country" name="location_country" id="location_choice">
+            <datalist id="location_country">
+                <option value="Malaysia">
+                <option value="Mexico">
+                <option value="India">
+                <option value="Spain">
+                <option value="USA">
+            </datalist>
+            <input id="" type="submit" value="Update">
+        </form>
+    </div>
+</body>
+
+</html>
