@@ -1,16 +1,13 @@
-from django.shortcuts import render, HttpResponse
-# from django.http import HttpResponse, JsonResponse
-# from rest_framework import viewsets
+from django.shortcuts import render, HttpResponse, redirect
 from rest_framework import status
 from .models import User
 from .serializers import UserSerializer
 from rest_framework.decorators import api_view
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.response import Response
+from django.contrib.auth import authenticate, login ,logout
+from django.contrib import messages
 
-# class UserViewSet(viewsets.ModelViewSet):
-#     queryset = User.objects.all().order_by('employee_name')
-#     serializer_class = UserSerializer
 
 @csrf_exempt
 @api_view(['GET','POST'])
@@ -52,3 +49,26 @@ def user_detail(request, pk):
 
 def index(request):
     return render(request,'index.html')
+
+
+
+def login_user(request):
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect('/login_user')
+        
+        else:
+            messages.info(request, "Bad Credentials!")
+            return redirect('home')
+
+    return render(request,"user_management.html")
+
+def logout_view(request):
+    logout(request)
+    return redirect('home')

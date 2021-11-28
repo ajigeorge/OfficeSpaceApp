@@ -1,16 +1,14 @@
-from django.urls import path, include
+from django.urls import path
 from .import views
 from rest_framework import routers
 from django.shortcuts import render
 
-# router = routers.DefaultRouter()
-# router.register(r'users',views.UserViewSet)
-
-
 urlpatterns = [
-    # path('',include(router.urls)),
-    # path('api-auth/', include('rest_framework.urls',namespace='rest_framework'))
+
     path('users/',views.user_list),
     path('users/<int:pk>/',views.user_detail),
-    path('',views.index, name = 'home')
+    path('',views.index, name = 'home'),
+    path('login_user',views.login_user),
+    # path('management',views.management),
+    path('logout_view',views.logout_view,),
 ]

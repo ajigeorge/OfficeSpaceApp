@@ -55,7 +55,7 @@ class Seat(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__ (self):
-        return self.seat_number + self.seat_type + self.location + self.building + self.location
+        return self.seat_number + self.seat_type + self.location + self.building + self.floor
 
 
 class User(models.Model):
