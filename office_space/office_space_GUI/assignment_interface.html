@@ -9,7 +9,7 @@
     <link href="interface_style.css" rel="stylesheet" media="all" />
 </head>
 
-<body>
+<body class="interface_page">
     <h1>Seat Assignment</h1>
     <label for="employee_name" type="text">Employee Name</label>
     <input id="employee_name" placeholder="Employee Name">
@@ -21,9 +21,9 @@
                 <option value="building-choices"></option>
                 <option value="floor-choices"></option>
                 <option value="seat-choices"></option> -->
-            <label>Location Code</label>
-            <input>
-            <datalist>
+            <label for="location">Location Code</label>
+            <input list="location">
+            <datalist id="location">
                 <option value="L1">
                 <option value="L2">
                 <option value="L3">
@@ -31,47 +31,50 @@
                 <option value="L5">
             </datalist>
 
-            <label>Building Code</label>
-            <input>
-            <option value="B1">
-            <option value="B2">
-            <option value="B3">
-            <option value="B4">
-            <option value="B5">
-                </datalist>
-                <datalist>
-                    <label for="floor">Floor Code</label>
-                    <input id="floor">
-                    <option value="F1">
-                    <option value="Piso 2">
-                    <option value="Level 3">
-                    <option value="Mezzanine">
-                    <option value="F5">
-                </datalist>
-                <datalist>
-                    <label>Seat Type</label>
-                    <input>
-                    <option value="Manager">
-                    <option value="Cubicle">
-                    <option value="Corner">
-                    <option value="Conference">
-                    <option value="Desk">
-                </datalist>
-                <datalist>
-                    <label>Seat Number</label>
-                    <input>
-                    <datalist>
-                        <option value="S1">
-                        <option value="S2">
-                        <option value="S3">
-                        <option value="S4">
-                        <option value="S5">
-                    </datalist>
-                    <input type="submit" class="clickables">
+            <label for="building">Building Code</label>
+            <input list="building">
+            <datalist id="building">
+                <option value="B1">
+                <option value="B2">
+                <option value="B3">
+                <option value="B4">
+                <option value="B5">
+            </datalist>
+
+            <label for="floor">Floor Code</label>
+            <input list="floor">
+            <datalist id="floor">
+                <option value="F1">
+                <option value="Piso 2">
+                <option value="Level 3">
+                <option value="Mezzanine">
+                <option value="F5">
+            </datalist>
+
+            <label for="seat_type">Seat Type</label>
+            <input list="seat_type">
+            <datalist id="seat_type">
+                <option value="Manager">
+                <option value="Cubicle">
+                <option value="Corner">
+                <option value="Conference">
+                <option value="Desk">
+            </datalist>
+
+            <label for="seat_number">Seat Number</label>
+            <input list="seat_number">
+            <datalist id="seat_number">
+                <option value="S1">
+                <option value="S2">
+                <option value="S3">
+                <option value="S4">
+                <option value="S5">
+            </datalist>
+            <input type="submit" class="clickables">
         </form>
-        </section>
-        <section>
-            <div id="location-code-list">
+    </section>
+    <section>
+        <div id="location-code-list">
             <details>
                 <summary>Location Code</summary>
                 <p>Refined by city and country.</p>
@@ -102,7 +105,7 @@
             </details>
         </div>
     </section>
-   
+
 </body>
 
 </html>
