@@ -12,15 +12,13 @@
 <body style="font-family:Verdana, Geneva, Tahoma, sans-serif; 
 background-image: url('https://www.ust.com/content/dam/ust/images/locations/Map.svg?auto=webp,smallest&quality=80');
  background-repeat: no-repeat;">
-    <h1>UST Locations</h1>
-    <div id="location-discriptions">
-        <!-- <details>
-            <summary></summary>
-            <p></p>
-        </details> -->
+    <h1>UST Location Assignment</h1>
+    <div id="location_interface">
+
         <!-- <form action="" method="get"> succeeding list should populate based on choice-->
+        <!-- Reorganize for js dynamic list-->
         <form>
-            <label for="location_code">Location Code:</label>
+            <label for="location_code">Location Code</label>
             <input list="location_code" name="location_code" id="location_choice">
             <datalist id="location_code">
                 <option value="L1">
@@ -29,8 +27,8 @@ background-image: url('https://www.ust.com/content/dam/ust/images/locations/Map.
                 <option value="L4">
                 <option value="L5">
             </datalist>
-            <!-- Reorganize for <details> instead?-->
-            <label for="location_description">Description:</label>
+
+            <label for="location_description">Description</label>
             <input list="location_description" name="location_description" id="location_choice">
             <datalist id="location_description">
                 <option value="Americas">
@@ -39,7 +37,7 @@ background-image: url('https://www.ust.com/content/dam/ust/images/locations/Map.
                 <option value="Middle East">
                 <option value="Africa">
             </datalist>
-            <label for="location_city">City:</label>
+            <label for="location_city">City</label>
             <input list="location_city" name="location_city" id="location_choice">
             <datalist id="location_city">
                 <option value="Penang">
@@ -53,7 +51,7 @@ background-image: url('https://www.ust.com/content/dam/ust/images/locations/Map.
                 <option value="Atlanta">
                 <option value="Sidney,NE">
             </datalist>
-            <label for="location_country">Country:</label>
+            <label for="location_country">Country</label>
             <input list="location_country" name="location_country" id="location_choice">
             <datalist id="location_country">
                 <option value="Malaysia">
@@ -62,7 +60,7 @@ background-image: url('https://www.ust.com/content/dam/ust/images/locations/Map.
                 <option value="Spain">
                 <option value="USA">
             </datalist>
-            <input id="" class="clickables" type="submit" value="Update">
+            <input id="" class="clickables" type="submit" value="UPDATE" style="color:white">
         </form>
     </div>
 </body>

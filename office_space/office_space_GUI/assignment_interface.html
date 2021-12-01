@@ -5,22 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UST Office Floor Management</title>
+    <title>UST Office Assignment Management</title>
     <link href="interface_style.css" rel="stylesheet" media="all" />
 </head>
 
 <body class="interface_page">
-    <h1>Seat Assignment</h1>
+    <h1>UST Seat Assignment</h1>
+    <div id="assignment_interface">
     <label for="employee_name" type="text">Employee Name</label>
     <input id="employee_name" placeholder="Employee Name">
     <label for="employee_id" type="text">Employee Id</label>
     <input id="employee_id" placeholder="Employee Id">
     <section class="allocation">
         <form>
-            <!-- <option value="location-choices"></option>
-                <option value="building-choices"></option>
-                <option value="floor-choices"></option>
-                <option value="seat-choices"></option> -->
+        
             <label for="location">Location Code</label>
             <input list="location">
             <datalist id="location">
@@ -70,29 +68,30 @@
                 <option value="S4">
                 <option value="S5">
             </datalist>
-            <input type="submit" class="clickables">
+            <input type="submit" class="clickables" style="color:white" value="SUBMIT">
         </form>
     </section>
+    <br>
     <section>
-        <div id="location-code-list">
+        <div id="location_code_list">
             <details>
                 <summary>Location Code</summary>
                 <p>Refined by city and country.</p>
             </details>
         </div>
-        <div id="building-list">
+        <div id="building_list">
             <details>
                 <summary>Building Code</summary>
                 <p>Specific building in location. In some cases the list will only contain one choice.</p>
             </details>
         </div>
-        <div id="floor-list">
+        <div id="floor_list">
             <details>
                 <summary>Floor Code</summary>
                 <p>Specific floor located within a building.</p>
             </details>
         </div>
-        <div id="seat-type">
+        <div id="seat_type">
             <details>
                 <summary>Seat Type</summary>
                 <p>Type of office space employee will occupy; manager, "normal" or cubicle.</p>
@@ -105,7 +104,7 @@
             </details>
         </div>
     </section>
-
+</div>
 </body>
 
 </html>
