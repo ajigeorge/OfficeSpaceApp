@@ -8,6 +8,8 @@ from rest_framework.response import Response
 from django.contrib.auth import authenticate, login ,logout
 from django.contrib import messages
 
+from django.urls import reverse
+from django.http import HttpResponseRedirect
 
 @csrf_exempt
 @api_view(['GET','POST'])
@@ -48,11 +50,13 @@ def user_detail(request, pk):
         return Response(status=status.HTTP_NO_CONTENT)
 
 def index(request):
-    return render(request,'index.html')
+    if not request.user.is_authenticated:
+        # return redirect('/')
+        return render(request,'index.html')
+        # return HttpResponseRedirect(reverse('login_user'))
 
 
-
-def login_user(request):
+def login_view(request):
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
@@ -61,7 +65,7 @@ def login_user(request):
 
         if user is not None:
             login(request, user)
-            return redirect('/login_user')
+            return redirect('/login_view')
         
         else:
             messages.info(request, "Bad Credentials!")

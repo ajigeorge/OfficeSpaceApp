@@ -21,7 +21,7 @@
     </header>
     <div class="container">
             <h2>Welcome Back</h2>
-            <form action="/login_user" method="POST">
+            <form action="/login_view" method="POST">
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="username">username</label>
@@ -31,11 +31,21 @@
                     <label for="password">Password</label>
                     <input type="password" name="password" id="password"  placeholder="Password" class="form-control">
                 </div>
-                <!-- <section id="captcha">
-                    <canvas id=login_captcha>captcha text</canvas>
-                    <input type="text" id="" name="text" class="form-control">
-                    <button id="captcha_submit" type="submit">Refresh</button>    
-                </section> -->
+
+                <!-- <div class="center">
+                    <h1 id="captchaHeading">Captcha Validator Using HTML, CSS and JavaScript</h1>
+                    <div id="captchaBackground">
+                        <canvas id="captcha">captcha text</canvas>
+                        <input id="textBox" type="text" name="text">
+                        <div id="buttons">
+                            <input id="submitButton" type="submit">
+                            <button id="refreshButton" type="submit">Refresh</button>
+                        </div>
+                        <span id="output"></span>
+                    </div>
+
+                </div>
+                <script src="script.js"></script> -->
                 <button class="btn btn-primary">Login</button>
             </form>
     </div>

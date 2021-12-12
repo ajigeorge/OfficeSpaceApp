@@ -13,3 +13,9 @@ body {
     align-items: center;
     padding: 2rem;
 } */
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}

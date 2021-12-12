@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>UST Office Assignment Management</title>
+    <!-- <link href="interface_style.css" rel="stylesheet" media="all" /> -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="{% static 'js/scripts.js' %}"></script>
+</head>
+
+<body class="interface_page">
+    <div class="app_navigation">
+        <a ><input type="text"></a>
+        <a href="">Search</a>
+        <a href="./new_assignment.html">New</a>
+        <a href="./assignment_roster.html">Home</a>
+        <a href="">Profile</a>
+    </div>
+    <h1>UST Seat Assignment</h1>
+    <div id="assignment_interface">
+    <label for="employee_name" type="text">Employee Name</label>
+    <input id="employee_name" placeholder="Employee Name">
+    <label for="employee_id" type="text">Employee Id</label>
+    <input id="employee_id" placeholder="Employee Id">
+    <section class="allocation">
+        <form>
+        
+            <label for="location">Location Code</label>
+            <input list="location">
+            <datalist id="location">
+                <option value="L1">
+                <option value="L2">
+                <option value="L3">
+                <option value="L4">
+                <option value="L5">
+            </datalist>
+            <label for="building">Building Code</label>
+            <input list="building">
+            <datalist id="building">
+                <option value="B1">
+                <option value="B2">
+                <option value="B3">
+                <option value="B4">
+                <option value="B5">
+            </datalist>
+            <label for="floor">Floor Code</label>
+            <input list="floor">
+            <datalist id="floor">
+                <option value="F1">
+                <option value="Piso 2">
+                <option value="Level 3">
+                <option value="Mezzanine">
+                <option value="F5">
+            </datalist>
+            <label for="seat_type">Seat Type</label>
+            <input list="seat_type">
+            <datalist id="seat_type">
+                <option value="Manager">
+                <option value="Cubicle">
+                <option value="Corner">
+                <option value="Conference">
+                <option value="Desk">
+            </datalist>
+            <label for="seat_number">Seat Number</label>
+            <input list="seat_number">
+            <datalist id="seat_number">
+                <option value="S1">
+                <option value="S2">
+                <option value="S3">
+                <option value="S4">
+                <option value="S5">
+            </datalist>
+            <input type="submit" class="clickables" style="color:white" value="SUBMIT">
+        </form>
+    </section>
+    <br>
+    <section>
+        <div id="location_code_list">
+            <details>
+                <summary>Location Code</summary>
+                <p>Refined by city and country.</p>
+            </details>
+        </div>
+        <div id="building_list">
+            <details>
+                <summary>Building Code</summary>
+                <p>Specific building in location. In some cases the list will only contain one choice.</p>
+            </details>
+        </div>
+        <div id="floor_list">
+            <details>
+                <summary>Floor Code</summary>
+                <p>Specific floor located within a building.</p>
+            </details>
+        </div>
+        <div id="seat_type">
+            <details>
+                <summary>Seat Type</summary>
+                <p>Type of office space employee will occupy; manager, "normal" or cubicle.</p>
+            </details>
+        </div>
+        <div id="seat_number">
+            <details>
+                <summary>Seat Number</summary>
+                <p>Includes appended location, building, and floor code combination.</p>
+            </details>
+        </div>
+    </section>
+</div>
+</body>
+</html>
