@@ -73,6 +73,33 @@ def login_view(request):
 
     return render(request,"user_management.html")
 
+def dashboard(request):
+    # if 'user_id' not in request.session:
+    #     return redirect('/')
+    # user = User.objects.get(id=request.session['user_id'])
+    # context = {
+    #     'user': user,
+    #     'seats': Seat.objects.all()
+    # }
+    return render(request,'assignment.html')
+
+def new(request):
+    # if 'user_id' not in request.session:
+    #     return redirect('/')
+    return render(request,'new_assignment.html')
+
+def create(request):
+    # user = User.objects.get(id=request.session['user_id'])
+    # Seat.objects.create(
+    #     seat_number = request.POST['seat_number'],
+    #     seat_type = request.POST['seat_type'],
+    #     location_code = request.POST['location_code'],
+    #     building_code = request.POST['building_code'],
+    #     floor_code = request.POST['floor_code'],
+    # )
+    # return redirect('/dashboard')
+    pass
+
 def logout_view(request):
     logout(request)
     return redirect('home')

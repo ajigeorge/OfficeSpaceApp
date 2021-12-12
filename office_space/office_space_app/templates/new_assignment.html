@@ -16,32 +16,38 @@
         <a ><input type="text"></a>
         <a href="">Search</a>
         <a href=""></a>
-        <a href="./assignment_roster.html">Home</a>
+        <a href="/login_view">Home</a>
         <a href="">Profile</a>
     </div>
     <h1>Add New</h1>
-    <div id="add_new_interface">
-    <!-- style= "display: block" -->
-        <form action="">
+    <div class="main">
+        <form action="/create" method="post">
+            {% csrf_token %}
+            <div class= "form-group">
             <label for="location_code">Location Code</label>
-            <input id="location_code">
-            
-            <label for="location_city">City</label>
-            <input id="location_city">
-            
-            <label for="location_country">Country</label>
-            <input id="location_country">
-            
-            <label for="">Building Code</label>
-            <input id="building_code">
-            
+            <input id="location_code" type="text" name="location_code"class="form-control" required>
+            </div>
+            <div class= "form-group">
+            <label for="city">City</label>
+            <input type="text" name="city" id="city" class="form-control" required >
+            </div>
+            <div class= "form-group">
+            <label for="country">Country</label>
+            <input type="text" name="country" id="country" class="form-control" required>
+            </div>
+            <div class= "form-group">
+            <label for="building_code">Building Code</label>
+            <input type="text" name="building_code" id="building_code" class="form-control" required>
+            </div>
+            <div class= "form-group"></div>
             <label for="floor_code">Floor Code</label>
-            <input id="floor_code">
-            
+            <input type="text" name="floor_code" id="floor_code" class="form-control" required>
+            </div>
+            <div class= "form-group">
             <label for="seat_number">Seat Code</label>
-            <input id="seat_number">
-            
-            <button type="submit" class="clickables" style="color:white">CREATE</button>
+            <input type="text" name="seat_number" id="seat_number" class="form-control" required>
+            </div>
+            <button class="btn btn-primary">Create</button>
         </form>
     </div>  
 </body>

@@ -16,12 +16,14 @@
     <div class="app_navigation">
         <a ><input type="text"></a>
         <a href="">Search</a>
-        <a href="./new_assignment.html">New</a>
-        <a href="./assignment_roster.html">Home</a>
+        <a href="/new">New</a>
+        <a href="./login_view">Home</a>
         <a href="">Profile</a>
+        <a href="/logout_view">Log Out</a>
+        
     </div>
     <h1>UST Seat Assignment</h1>
-    <div id="assignment_interface">
+    <!-- <div id="assignment_interface">
     <label for="employee_name" type="text">Employee Name</label>
     <input id="employee_name" placeholder="Employee Name">
     <label for="employee_id" type="text">Employee Id</label>
@@ -110,6 +112,34 @@
             </details>
         </div>
     </section>
-</div>
+</div> -->
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Seat Number</th>
+                    <th>Location</th>
+                    <th>Building</th>
+                    <th>Floor</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for seat in seats %}
+                <tr>
+                    <td>{{employee.id}}</td>
+                    <td>{{seat.id}}</td>
+                    <td>{{location.id}}</td>
+                    <td>{{building.id}}</td>
+                    <td>{{floor.id}}</td>
+                    <td><a href="/assign/{{ seat.id }}/edit">Edit</a>
+                    </td>
+                    <td><a href="/assign/{{ seat.id }}/delete">Delete</a>
+                    </td> 
+                </tr>
+                {% endfor%}
+            </tbody>
+        </table> 
 </body>
 </html>
