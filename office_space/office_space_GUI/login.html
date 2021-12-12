@@ -5,24 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UST Office Floor Assignment Login</title>
+    <link href="interface_style.css" rel="stylesheet" media="all" />
 </head>
 <body>
     <div id="login">
-        <h2>Welcome Back</h2>
+        
         <form>
+            <h2>Welcome Back</h2>
             <label for="user_id">User ID</label>
             <input id="user_id" type="text" placeholder="Enter user ID" required />
 <br>
             <label for="password">Password</label>
             <input id="password" type="text" placeholder="Enter password" required />
             
-            <section id="captcha"> Captcha
+            <label for="login_captcha">Captcha</label>
+            <section id="captcha">
+                
             <canvas id="login_captcha"></canvas>
-            <input id="" type="text">
-            <button id="captcha_submit">Refresh</button>
+           
+            <button id="captcha_submit" class="clickables">Refresh</button>
             </section>
-
-            <button type="submit">Login</button>
+            <input id="" type="text" placeholder= "Enter Captcha code">
+            <button type="submit" class="clickables">Login</button>
     </form>
 </div>
 <script src="./captcha.js"></script>

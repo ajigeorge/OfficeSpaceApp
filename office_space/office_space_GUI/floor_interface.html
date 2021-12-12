@@ -5,10 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UST Office Floor Assignment</title>
+    <link href="interface_style.css" rel="stylesheet" media="all" />
 </head>
-<body>
+<body class="interface_page">
+    <div class="app_navigation">
+        <a ><input type="text"></a>
+        <a href="">Search</a>
+        <a href="./new_assignment.html">New</a>
+        <a href="./assignment_roster.html">Home</a>
+        <a href="">Profile</a>
+    </div>
     <h1> UST Office Floor Assignment</h1>
-    <div id="floor-discriptions">
+    <div id="floor_interface">
+        <form action="">
+            <!-- floor_code id change needed for js -->
+            <label for="floor_code">Floor Code</label>
+            <input list="floor_code">
+            <datalist id="floor_code">
+                <option value="F1">
+            </datalist>
+            
+            <label for="floor_description">Description</label>
+            <input id="floor_description" value="">
+            
+            <label for="building_code">Building Code</label>
+            <input id="building_code" value="">
+            
+            <label for="location_code">Location Code</label>
+            <input id="location_code" value="">
+            
+            
+            <button type="submit" class="clickables" style="color:white">UPDATE</button>
+        </form>
         <!-- <details>
             <summary></summary>
             <p></p>
