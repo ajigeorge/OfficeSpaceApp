@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-from .env import secretKey
+# from .env import secretKey
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = secretKey
+SECRET_KEY = 'we6vwm(x%o0b@6s%oa^2mzpj@iexz1v+$e(0hzigce2y_ue=4m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -121,4 +121,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-AUTH_USER_MODEL = 'office_space_app.CustomUser'
+AUTH_USER_MODEL = 'office_space_app.User'
