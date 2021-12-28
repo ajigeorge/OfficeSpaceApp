@@ -1,6 +1,7 @@
 from django.db import models
-import re
-#import bcrypt
+from django.contrib.auth.models import AbstractBaseUser, PermissionMixin
+from .managers import CustomUserManager
+
 # Create your models here.
 
 class Location(models.Model):
@@ -58,13 +59,14 @@ class Seat(models.Model):
         return self.seat_number + self.seat_type + self.location + self.building + self.floor
 
 
-class User(models.Model):
+class CustomUser(models.Model):
     USER_ROLE = (
         ('Admin', 'Admin'),
         ('Location_anchor', 'Location_anchor'),
         ('Building_anchor', 'Building_anchor'),
         ('Floor_anchor', 'Floor_anchor'),
     )
+    username = None
     employee_name = models.CharField(max_length=100)
     email_id = models.CharField(max_length=100)
     password = models.CharField(max_length=255)
@@ -75,8 +77,17 @@ class User(models.Model):
     location = models.ForeignKey(Location, related_name="location_users", on_delete = models.CASCADE)
     building = models.ForeignKey(Building, related_name="building_users",on_delete = models.CASCADE)
     floor = models.ForeignKey(Floor, related_name="floor_users",on_delete = models.CASCADE)
+    is_admin = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
+    is_superuser = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    USERNAME_FIELD = "email_id"
+    REQUIRED_FIELDS =[]
+
+    objects =CustomUserManager()
 
     def __str__(self):
         return self.employee_name
