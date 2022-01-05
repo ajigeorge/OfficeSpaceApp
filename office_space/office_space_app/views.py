@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
 from rest_framework import status
-from .models import User
+from .models import *
 from .serializers import UserSerializer
 from rest_framework.decorators import api_view
 from django.views.decorators.csrf import csrf_exempt
@@ -49,19 +49,17 @@ def user_detail(request, pk):
         location.delete()
         return Response(status=status.HTTP_NO_CONTENT)
 
+
 def index(request):
-    if not request.user.is_authenticated:
-        # return redirect('/')
-        return render(request,'index.html')
-        # return HttpResponseRedirect(reverse('login_user'))
+    return render(request,'index.html')
 
 
 def login_view(request):
     if request.method == "POST":
-        username = request.POST['username']
+        email_id= request.POST['email_id']
         password = request.POST['password']
 
-        user = authenticate(request, username=username, password=password)
+        user = authenticate(request, email_id=email_id, password=password)
 
         if user is not None:
             login(request, user)
@@ -74,17 +72,16 @@ def login_view(request):
     return render(request,"user_management.html")
 
 def dashboard(request):
-    # if 'user_id' not in request.session:
+    # if 'email_id' not in request.session:
     #     return redirect('/')
-    # user = User.objects.get(id=request.session['user_id'])
+    # user = User.objects.get(id=request.session['email_id'])
     # context = {
     #     'user': user,
-    #     'seats': Seat.objects.all()
     # }
-    return render(request,'assignment.html')
+    return render(request,'assignment.html',context)
 
 def new(request):
-    # if 'user_id' not in request.session:
+    # if 'email_id' not in request.session:
     #     return redirect('/')
     return render(request,'new_assignment.html')
 

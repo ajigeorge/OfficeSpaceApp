@@ -121,4 +121,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-AUTH_USER_MODEL = 'office_space_app.CustomUser'
+AUTH_USER_MODEL = 'office_space_app.User'
