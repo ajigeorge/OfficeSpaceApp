@@ -3,6 +3,8 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from .managers import CustomUserManager
 from django.utils.translation import gettext_lazy as _
 
+from django.utils.translation import gettext_lazy as _
+
 # Create your models here.
 
 class Location(models.Model):
@@ -60,7 +62,11 @@ class Seat(models.Model):
         return self.seat_number + self.seat_type + self.location.__str__() + self.building.__str__() + self.floor.__str__()
 
 
+<<<<<<< HEAD
 class User(AbstractBaseUser,PermissionsMixin):
+=======
+class User(AbstractBaseUser, PermissionsMixin):
+>>>>>>> 1776602e726e7a7edd9ec0805cd132df8c8376b7
     USER_ROLE = (
         ('Admin', 'Admin'),
         ('Location_anchor', 'Location_anchor'),
@@ -68,24 +74,43 @@ class User(AbstractBaseUser,PermissionsMixin):
         ('Floor_anchor', 'Floor_anchor'),
     )
     employee_name = models.CharField(max_length=100)
+<<<<<<< HEAD
     email_id = models.EmailField(_('email address'), unique=True)
     # password = models.CharField(max_length=255)
+=======
+    # email_id = models.CharField(max_length=100)
+    # password = models.CharField(max_length=255)
+    email_id = models.EmailField(_('email address'), unique=True)
+>>>>>>> 1776602e726e7a7edd9ec0805cd132df8c8376b7
     location_code = models.CharField(max_length=5)
     building_code = models.CharField(max_length=5)
     floor_code = models.CharField(max_length=5)
     user_role = models.CharField(max_length=45, choices=USER_ROLE)
+<<<<<<< HEAD
     location = models.ForeignKey(Location, related_name="location_users", on_delete = models.CASCADE, default=1)
     building = models.ForeignKey(Building, related_name="building_users",on_delete = models.CASCADE, default=1)
     floor = models.ForeignKey(Floor, related_name="floor_users",on_delete = models.CASCADE, default=1)
+=======
+    
+    location = models.ForeignKey(Location, related_name="location_users", on_delete = models.CASCADE,default=1)
+    building = models.ForeignKey(Building, related_name="building_users",on_delete = models.CASCADE,default=1)
+    floor = models.ForeignKey(Floor, related_name="floor_users",on_delete = models.CASCADE,default=1)
+    
+>>>>>>> 1776602e726e7a7edd9ec0805cd132df8c8376b7
     is_admin = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
+    
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     USERNAME_FIELD = "email_id"
+<<<<<<< HEAD
     REQUIRED_FIELDS =['employee_name']
+=======
+    REQUIRED_FIELDS =["employee_name"]
+>>>>>>> 1776602e726e7a7edd9ec0805cd132df8c8376b7
 
     objects = CustomUserManager()
 
